@@ -49,6 +49,8 @@ C) O código avalia a expressão booleana, imprime `true` e, em seguida, verific
 
 D) O código avalia a expressão booleana, imprime `false` e ordena os valores em ordem crescente.
 
+Resposta correta: A)
+
 
 ______
 
@@ -110,6 +112,8 @@ B) analisarCredito1() exibirá: 'Seu crédito foi negado. Saldo disponível: -60
 C) analisarCredito1() exibirá: 'Seu crédito foi negado. Saldo disponível: -200.', enquanto analisarCredito2() exibirá: 'Seu crédito foi aprovado. Saldo disponível: 100.'
 
 D) Ambas as funções exibirão: 'Seu crédito foi aprovado Saldo disponível: 500.'
+
+Resposta correta: A
 ______
 
 **3)** Considere o seguinte trecho de código em JavaScript:
@@ -134,6 +138,8 @@ B) O código verifica se a idade pertence à faixa adulta. Se for, exibe "Você 
 C) O código verifica se a idade está entre 18 e 60 anos e, se for, imprime "Você é um adulto!". Se não estiver nesse intervalo, imprime "Você está na melhor idade!".
 
 D) O código verifica se a idade é menor de 18, entre 18 e 60 ou acima de 60, imprimindo uma mensagem específica para cada caso.
+
+Resposta correta: B)
 ______
 
 **4)** Qual será o resultado impresso no console após a execução do seguinte código?
@@ -203,6 +209,7 @@ Dispositivo 4 não pode ser ligado. Energia insuficiente.
 
 Dispositivo 5 não pode ser ligado. Energia insuficiente.
 
+Resposta correta: D)
 ______
 
 **5)** Qual é a principal função do método update() em um jogo desenvolvido com Phaser.js?
@@ -216,6 +223,8 @@ B) O método update() é chamado continuamente a cada quadro (frame) do jogo, se
 C) O método update() renderiza todos os sprites na tela e garante que a física do jogo seja processada corretamente.
 
 D) O método update() é chamado apenas uma vez após a criação da cena, sendo utilizado para configurar variáveis iniciais do jogo.
+
+Resposta correta: B)
 ______
 
 **6)** Qual é o principal objetivo do módulo Matter.js Physics em Phaser.js?
@@ -230,6 +239,7 @@ C) Renderizar gráficos otimizados para jogos 2D e garantir uma taxa de quadros 
 
 D) Criar animações automáticas para sprites e objetos interativos sem necessidade de programação de movimentação.
 
+Resposta correta: A)
 ______
 
 # Questões dissertativas
@@ -245,6 +255,25 @@ Pedidos entre R$50,00 e R$199,99 (inclusive) → "Frete com custo adicional!"
 Pedidos de R$200,00 ou mais → "Frete grátis!"
 ```
 Implemente um pseudocódigo que receba o valor total da compra e exiba a classificação correta do frete para o cliente.
+
+```
+INÍCIO
+    // Recebe o valor total da compra
+    DECLARE valorTotal: REAL
+    
+    ESCREVA "Digite o valor total da compra: "
+    LEIA valorTotal
+    
+    // Classifica o pedido com base no valor
+    SE valorTotal < 50.00 ENTÃO
+        ESCREVA "Frete não disponível!"
+    SENÃO SE valorTotal >= 50.00 E valorTotal <= 199.99 ENTÃO
+        ESCREVA "Frete com custo adicional!"
+    SENÃO
+        ESCREVA "Frete grátis!"
+    FIM SE
+FIM
+```
 ______
 
 **8)** Considere a implementação da classe base Veiculo em um sistema de modelagem de veículos. Sua tarefa é implementar, utilizando pseudocódigo, as classes derivadas Carro e Moto, que herdam da classe Veiculo, adicionando atributos específicos e métodos para calcular o consumo de combustível de um carro e de uma moto, respectivamente.
@@ -262,6 +291,59 @@ Método CalcularConsumo():
 ```
 Implementação genérica para cálculo de consumo, a ser sobrescrita pelas subclasses.
 Agora, implemente as classes Carro e Moto, garantindo que ambas herdem de Veiculo e possuam métodos específicos para calcular o consumo de combustível com base na quilometragem e eficiência do veículo.
+
+```
+CLASSE Veiculo
+    ATRIBUTOS:
+        modelo: TEXTO
+        ano: INTEIRO
+
+    MÉTODO Construtor(modelo: TEXTO, ano: INTEIRO)
+        esse.modelo = modelo
+        esse.ano = ano
+    FIM MÉTODO
+
+    MÉTODO CalcularConsumo()
+        // Método genérico a ser sobrescrito pelas subclasses
+    FIM MÉTODO
+FIM CLASSE
+
+CLASSE Carro HERDA Veiculo
+    ATRIBUTOS:
+        quilometragem: REAL
+        eficiencia: REAL  // km/l
+
+    MÉTODO Construtor(modelo: TEXTO, ano: INTEIRO, quilometragem: REAL, eficiencia: REAL)
+        SUPER.Construtor(modelo, ano)
+        esse.quilometragem = quilometragem
+        esse.eficiencia = eficiencia
+    FIM MÉTODO
+
+    MÉTODO CalcularConsumo() SOBRESCRITO
+        // Consumo = Quilometragem / Eficiência (quantos litros foram gastos)
+        consumo = esse.quilometragem / esse.eficiencia
+        RETORNE consumo
+    FIM MÉTODO
+FIM CLASSE
+
+CLASSE Moto HERDA Veiculo
+    ATRIBUTOS:
+        quilometragem: REAL
+        eficiencia: REAL  // km/l
+
+    MÉTODO Construtor(modelo: TEXTO, ano: INTEIRO, quilometragem: REAL, eficiencia: REAL)
+        SUPER.Construtor(modelo, ano)
+        esse.quilometragem = quilometragem
+        esse.eficiencia = eficiencia
+    FIM MÉTODO
+
+    MÉTODO CalcularConsumo() SOBRESCRITO
+        // Consumo = Quilometragem / Eficiência (quantos litros foram gastos)
+        consumo = esse.quilometragem / esse.eficiencia
+        RETORNE consumo
+    FIM MÉTODO
+FIM CLASSE
+```
 ______
 
 **9)** Você é um cientista da NASA e está ajudando no desenvolvimento de um sistema de pouso para sondas espaciais em Marte. Seu objetivo é calcular o tempo necessário para que a sonda reduza sua velocidade até um nível seguro para pouso, considerando uma velocidade inicial de entrada na atmosfera marciana e uma taxa de desaceleração constante causada pelo atrito atmosférico e retrofoguetes.
@@ -275,6 +357,36 @@ Considere a fórumla de atualização velocidade:
     velocidade = velocidadeInicial - desaceleracao * tempo
 ```
 Seu programa deve determinar quanto tempo será necessário para que a sonda atinja uma velocidade segura de pouso, sem ultrapassar os limites estabelecidos.
+
+```
+INÍCIO
+    VELOCIDADE_SEGURA = 1.5
+    TEMPO_MAXIMO = 250.0
+    DESACELERACAO_MINIMA = 0.7
+    DESACELERACAO_MAXIMA = 2.8
+
+    ESCREVA "Digite a velocidade inicial (m/s): "
+    LEIA velocidadeInicial
+
+    ESCREVA "Digite a desaceleração desejada (m/s²): "
+    LEIA desaceleracao
+
+    SE desaceleracao < DESACELERACAO_MINIMA OU desaceleracao > DESACELERACAO_MAXIMA ENTÃO
+        ESCREVA "ERRO: Desaceleração fora dos limites."
+        ENCERRE
+    FIM SE
+
+    tempoNecessario ← (velocidadeInicial - VELOCIDADE_SEGURA) / desaceleracao
+
+    SE tempoNecessario > TEMPO_MAXIMO ENTÃO
+        ESCREVA "ALERTA: Tempo de descida (", tempoNecessario, "s) excede o limite de ", TEMPO_MAXIMO, "s."
+    SENÃO SE tempoNecessario <= 0 ENTÃO
+        ESCREVA "ALERTA: Velocidade inicial já segura."
+    SENÃO
+        ESCREVA "Tempo para pouso: ", tempoNecessario, "s."
+    FIM SE
+FIM
+```
 ______
 
 **10)** Em um sistema de análise financeira, as operações de investimento de uma empresa podem ser representadas por matrizes, onde cada linha representa um tipo de investimento e cada coluna representa um período de tempo.
@@ -307,3 +419,33 @@ Escrever("Total de investimentos acumulados:")
 ImprimirMatriz(totalInvestimentos)  
 ```
 Agora, implemente a função MultiplicarMatrizesInvestimento(matrizA, matrizB), que multiplica as duas matrizes, simulando o efeito de diferentes fatores de crescimento e impacto financeiro nos investimentos ao longo do tempo.
+
+```
+Função MultiplicarMatrizesInvestimento(matrizA, matrizB):
+    # Verifica se o número de colunas de A é igual ao número de linhas de B
+    Se tamanho(matrizA[0]) ≠ tamanho(matrizB) então:
+        Retornar "As matrizes não podem ser multiplicadas. Número de colunas de A difere do número de linhas de B."
+    Senão:
+        linhasA <- tamanho(matrizA)
+        colunasA <- tamanho(matrizA[0])
+        colunasB <- tamanho(matrizB[0])
+        matrizResultado <- novaMatriz(linhasA, colunasB)
+
+        # Loop para calcular cada elemento da matriz resultado
+        Para i de 0 até linhasA-1 faça:
+            Para j de 0 até colunasB-1 faça:
+                soma <- 0
+                Para k de 0 até colunasA-1 faça:
+                    soma <- soma + (matrizA[i][k] * matrizB[k][j])
+                matrizResultado[i][j] <- soma
+
+        Retornar matrizResultado
+
+# Exemplo de uso da função
+investimentos <- [[1000, 2000], [1500, 2500]]  # Matriz 2x2
+fatoresCrescimento <- [[1.1, 0.9], [1.2, 1.05]]  # Matriz 2x2
+
+investimentosProjetados <- MultiplicarMatrizesInvestimento(investimentos, fatoresCrescimento)
+Escrever("Projeção de investimentos com fatores de crescimento:")
+ImprimirMatriz(investimentosProjetados)
+```
